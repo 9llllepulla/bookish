@@ -1,4 +1,5 @@
 *.iml
 /builds
 /.idea
-/target
+*/target
+.gitignore
