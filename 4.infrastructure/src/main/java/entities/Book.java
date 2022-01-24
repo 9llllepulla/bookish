@@ -12,9 +12,9 @@ import java.util.Objects;
 public class Book {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE, generator = "bookSeq")
+    @GeneratedValue (strategy = GenerationType.AUTO)
     @Column (name = "BOOK_ID", nullable = false)
-    private int id;
+    private Integer id;
 
     @Basic
     @Column(name = "BOOK_TITLE", nullable = false, length = 200)
@@ -25,12 +25,16 @@ public class Book {
     private Timestamp yearPublication;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "genre_id", nullable = false, updatable = false)
+    @JoinColumn(name = "GENRE_ID", nullable = false, updatable = false)
     private Genre genre;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "publisher_id", nullable = false, updatable = false)
+    @JoinColumn(name = "PUBLISHER_ID", nullable = false, updatable = false)
     private Publisher publisher;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "DATA_ID", nullable = false, updatable = false)
+    private Data data;
 
     @Override
     public boolean equals (Object o) {

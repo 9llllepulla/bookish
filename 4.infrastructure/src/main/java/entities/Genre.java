@@ -10,9 +10,9 @@ import javax.persistence.*;
 public class Genre {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE, generator = "genreSeq")
+    @GeneratedValue (strategy = GenerationType.AUTO)
     @Column (name = "GENRE_ID", nullable = false)
-    private int id;
+    private Integer id;
 
     @Basic
     @Column(name = "GENRE_NAME", nullable = false, length = 200)
