@@ -14,9 +14,9 @@ import java.io.Serializable;
 @Embeddable
 public class BookAuthorPK implements Serializable {
 
-    @JoinColumn (name = "ID_BOOK", nullable = false)
+    @JoinColumn (name = "book_id", nullable = false)
     private int bookId;
-    @JoinColumn(name = "ID_AUTHOR", nullable = false)
+    @JoinColumn(name = "author_id", nullable = false)
     private int authorId;
 
     protected BookAuthorPK(int bookId, int authorId) {

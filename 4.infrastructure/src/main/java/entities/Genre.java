@@ -3,19 +3,20 @@ package entities;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Getter
-@Table (name = "GENRE")
+@Table (name = "genre")
 public class Genre {
 
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    @Column (name = "GENRE_ID", nullable = false)
+    @Column (name = "genre_id", nullable = false)
     private Integer id;
 
     @Basic
-    @Column(name = "GENRE_NAME", nullable = false, length = 200)
+    @Column(name = "genre_name", length = 200)
     private String genreName;
 
     @Override
@@ -25,7 +26,7 @@ public class Genre {
 
         Genre genre = (Genre) o;
 
-        if (id != genre.id) return false;
+        if (!Objects.equals(id, genre.id)) return false;
         return genreName.equals(genre.genreName);
     }
 

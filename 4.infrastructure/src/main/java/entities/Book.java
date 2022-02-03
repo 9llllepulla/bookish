@@ -8,32 +8,32 @@ import java.util.Objects;
 
 @Entity
 @Getter
-@Table (name = "BOOK")
+@Table (name = "book")
 public class Book {
 
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    @Column (name = "BOOK_ID", nullable = false)
+    @Column (name = "book_id", nullable = false)
     private Integer id;
 
     @Basic
-    @Column(name = "BOOK_TITLE", nullable = false, length = 200)
+    @Column(name = "book_title", length = 200)
     private String title;
 
     @Basic
-    @Column(name = "YEAR_PUBLICATION")
-    private Timestamp yearPublication;
+    @Column(name = "year_publication")
+    private Integer yearPublication;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "GENRE_ID", nullable = false, updatable = false)
+    @JoinColumn(name = "genre_id")
     private Genre genre;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "PUBLISHER_ID", nullable = false, updatable = false)
+    @JoinColumn(name = "publisher_id")
     private Publisher publisher;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "DATA_ID", nullable = false, updatable = false)
+    @JoinColumn(name = "data_id")
     private Data data;
 
     @Override
@@ -43,7 +43,7 @@ public class Book {
 
         Book book = (Book) o;
 
-        if (id != book.id) return false;
+        if (!Objects.equals(id, book.id)) return false;
         if (!title.equals(book.title)) return false;
         return Objects.equals(yearPublication, book.yearPublication);
     }

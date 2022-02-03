@@ -10,7 +10,7 @@ import java.util.Objects;
 @Entity
 @Getter
 @ToString(onlyExplicitlyIncluded = true)
-@Table (name = "BOOK_AUTHOR")
+@Table (name = "book_author")
 public class BookAuthor {
 
     @ToString.Include
@@ -19,12 +19,12 @@ public class BookAuthor {
 
     @MapsId ("bookId")
     @ManyToOne (optional = false, fetch = FetchType.LAZY)
-    @JoinColumn (name = "ID_BOOK", nullable = false)
+    @JoinColumn (name = "book_id", nullable = false)
     private Book book;
 
     @MapsId("authorId")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @JoinColumn(name = "ID_AUTHOR", nullable = false)
+    @JoinColumn(name = "author_id", nullable = false)
     private Author author;
 
     public BookAuthor(Book book, Author author) {
