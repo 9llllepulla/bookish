@@ -35,7 +35,7 @@
 
     <modules>
         <module>1.ui</module>
-        <module>2.application</module>
+        <module>controller</module>
         <module>3.model</module>
         <module>storage</module>
     </modules>
