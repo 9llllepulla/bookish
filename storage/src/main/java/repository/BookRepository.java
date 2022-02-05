@@ -1,4 +1,4 @@
-package storage;
+package repository;
 
 import entities.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
