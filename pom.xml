@@ -37,7 +37,7 @@
         <module>1.ui</module>
         <module>2.application</module>
         <module>3.model</module>
-        <module>4.infrastructure</module>
+        <module>storage</module>
     </modules>
 
     <dependencyManagement>
