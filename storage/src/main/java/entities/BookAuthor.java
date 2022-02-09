@@ -27,7 +27,7 @@ public class BookAuthor {
     @JoinColumn(name = "author_id", nullable = false)
     private Author author;
 
-    public BookAuthor(Book book, Author author) {
+    protected BookAuthor(Book book, Author author) {
         this.book = book;
         this.author = author;
         this.primaryKey = new BookAuthorPK(book.getId(), author.getId());

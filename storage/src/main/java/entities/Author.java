@@ -1,9 +1,13 @@
 package entities;
 
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -18,6 +22,16 @@ public class Author {
     @Basic
     @Column(name = "author_name", length = 200)
     private String authorName;
+
+    @Getter(AccessLevel.NONE)
+    @Setter (AccessLevel.NONE)
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+    private Set<BookAuthor> bookAuthors = new HashSet<>();
+
+    public void addBook(Book book) {
+        BookAuthor bookAuthor = new BookAuthor(book, this);
+        bookAuthors.add(bookAuthor);
+    }
 
     @Override
     public boolean equals (Object o) {
