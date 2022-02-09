@@ -38,6 +38,7 @@
         <module>api</module>
         <module>storage</module>
         <module>logic</module>
+        <module>transfer</module>
     </modules>
 
     <dependencyManagement>

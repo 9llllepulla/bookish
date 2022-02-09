@@ -1,4 +1,4 @@
-package com.transfer;
+package ui;
 
 public final class Info {
     private Info (){}
@@ -15,4 +15,3 @@ public final class Info {
             String name) { }
 
 }
-
