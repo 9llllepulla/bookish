@@ -13,8 +13,8 @@
 
     <properties>
         <spring-boot-dependencies.version>2.4.5</spring-boot-dependencies.version>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <github.global.server>github</github.global.server>
         <mockito-all.version>1.8.4</mockito-all.version>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
@@ -36,8 +36,8 @@
     <modules>
         <module>1.ui</module>
         <module>api</module>
-        <module>3.model</module>
         <module>storage</module>
+        <module>logic</module>
     </modules>
 
     <dependencyManagement>
