@@ -1,4 +1,4 @@
-package repository;
+package com.repository;
 
 public interface DataRepository {
 

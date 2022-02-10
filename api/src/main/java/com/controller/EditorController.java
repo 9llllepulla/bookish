@@ -4,7 +4,7 @@ package com.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ui.Info;
+import com.transfer.Info;
 
 @Slf4j
 @RestController

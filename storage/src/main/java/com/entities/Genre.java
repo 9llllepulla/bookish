@@ -1,4 +1,4 @@
-package entities;
+package com.entities;
 
 import lombok.Getter;
 
@@ -7,33 +7,33 @@ import java.util.Objects;
 
 @Entity
 @Getter
-@Table (name = "publisher")
-public class Publisher {
+@Table (name = "genre")
+public class Genre {
 
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    @Column (name = "publisher_id", nullable = false)
+    @Column (name = "genre_id", nullable = false)
     private Integer id;
 
     @Basic
-    @Column(name = "publisher_name", length = 200)
-    private String publisherName;
+    @Column(name = "genre_name", length = 200)
+    private String genreName;
 
     @Override
     public boolean equals (Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Publisher publisher = (Publisher) o;
+        Genre genre = (Genre) o;
 
-        if (!Objects.equals(id, publisher.id)) return false;
-        return publisherName.equals(publisher.publisherName);
+        if (!Objects.equals(id, genre.id)) return false;
+        return genreName.equals(genre.genreName);
     }
 
     @Override
     public int hashCode () {
         int result = id;
-        result = 31 * result + publisherName.hashCode();
+        result = 31 * result + genreName.hashCode();
         return result;
     }
 }

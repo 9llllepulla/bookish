@@ -1,6 +1,6 @@
-package repository;
+package com.repository;
 
-import entities.Author;
+import com.entities.Author;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

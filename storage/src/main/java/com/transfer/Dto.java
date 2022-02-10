@@ -1,4 +1,4 @@
-package storage;
+package com.transfer;
 
 /**
  * DTO record classes for entities transfer

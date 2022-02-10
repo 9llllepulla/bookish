@@ -1,4 +1,4 @@
-package ui;
+package com.transfer;
 
 public final class Info {
     private Info (){}
