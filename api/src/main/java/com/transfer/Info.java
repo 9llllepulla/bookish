@@ -8,10 +8,16 @@ public final class Info {
             String title,
             int yearPublication,
             String genreName,
-            String publisherName) { }
+            String publisherName,
+            String authorName) { }
 
     public record Author(
             int id,
             String name) { }
+
+    public record Genre(
+            int id,
+            String genreName
+    ) { }
 
 }

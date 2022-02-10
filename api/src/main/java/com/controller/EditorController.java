@@ -11,8 +11,8 @@ import com.transfer.Info;
 @RequestMapping ("/editor")
 public class EditorController {
 
-    @PutMapping(value = "/authors", params = "author")
-    public ResponseEntity<Void> editAuthor(@RequestParam (name = "author") Info.Author author) {
+    @PutMapping(value = "/authors")
+    public ResponseEntity<Void> editAuthor(@RequestParam Info.Author author) {
         return ResponseEntity.ok().build();// FIXME: stub
     }
 
@@ -21,8 +21,8 @@ public class EditorController {
         return ResponseEntity.ok().build();// FIXME: stub
     }
 
-    @PutMapping(value = "books", params = "book")
-    public ResponseEntity<Void> editAuthor(@RequestParam(name = "book") Info.Book book) {
+    @PutMapping(value = "books")
+    public ResponseEntity<Void> editAuthor(@RequestParam Info.Book book) {
         return ResponseEntity.ok().build();// FIXME: stub
     }
 
