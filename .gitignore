@@ -1,6 +1,8 @@
 *.iml
 /builds
 /.idea
+/.run
 */target
 .gitignore
 *_bd
+/logs
