@@ -1,4 +1,4 @@
-package com.transfer;
+package com.gllllepulla.transfer;
 
 public final class Info {
     private Info (){}

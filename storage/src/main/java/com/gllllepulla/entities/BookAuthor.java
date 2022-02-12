@@ -1,4 +1,4 @@
-package com.entities;
+package com.gllllepulla.entities;
 
 import lombok.Getter;
 import lombok.ToString;

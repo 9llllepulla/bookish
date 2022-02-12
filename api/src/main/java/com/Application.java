@@ -9,7 +9,7 @@ import java.util.Map;
 
 @Slf4j
 @SpringBootApplication
-@EntityScan (basePackages = "com")
+@EntityScan(basePackages = "com.gllllepulla.entities")
 public class Application {
 
     public static void main(String[] args) {

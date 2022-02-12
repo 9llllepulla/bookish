@@ -1,10 +1,10 @@
-package com.controller;
+package com.gllllepulla.controller;
 
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.transfer.Info;
+import com.gllllepulla.transfer.Info;
 
 @Slf4j
 @RestController

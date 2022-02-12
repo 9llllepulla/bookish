@@ -1,7 +1,7 @@
-package com.repository;
+package com.gllllepulla.repository;
 
-import com.entities.BookAuthor;
-import com.entities.BookAuthorPK;
+import com.gllllepulla.entities.BookAuthor;
+import com.gllllepulla.entities.BookAuthorPK;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

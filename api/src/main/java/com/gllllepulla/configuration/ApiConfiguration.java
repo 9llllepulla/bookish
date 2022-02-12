@@ -1,4 +1,4 @@
-package com.configuration;
+package com.gllllepulla.configuration;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

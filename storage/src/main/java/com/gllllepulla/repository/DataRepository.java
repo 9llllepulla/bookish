@@ -1,4 +1,4 @@
-package com.repository;
+package com.gllllepulla.repository;
 
 public interface DataRepository {
 

@@ -1,4 +1,4 @@
-package com.transfer;
+package com.gllllepulla.transfer;
 
 /**
  * DTO record classes for entities transfer

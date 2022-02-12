@@ -1,6 +1,6 @@
-package com.controller;
+package com.gllllepulla.controller;
 
-import com.transfer.Info;
+import com.gllllepulla.transfer.Info;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

@@ -1,4 +1,4 @@
-package com.controller;
+package com.gllllepulla.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -8,7 +8,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.transfer.Info;
+import com.gllllepulla.transfer.Info;
 
 import java.util.List;
 import java.util.Set;

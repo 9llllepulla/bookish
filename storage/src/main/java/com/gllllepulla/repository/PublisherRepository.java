@@ -1,6 +1,6 @@
-package com.repository;
+package com.gllllepulla.repository;
 
-import com.entities.Publisher;
+import com.gllllepulla.entities.Publisher;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
