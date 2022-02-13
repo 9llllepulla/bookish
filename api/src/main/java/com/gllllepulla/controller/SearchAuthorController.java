@@ -12,7 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Set;
 
 @Slf4j
@@ -42,10 +41,17 @@ public class SearchAuthorController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @Operation (summary = "Запрос автора по имени")
+    @Operation (summary = "Запрос автора (-ов) по имени (-ам)")
     @GetMapping(value = "authors/name")
-    public ResponseEntity<List<View.Author>> getAuthorsByName(@RequestParam Set<String> names) {
-        List<View.Author> authors = searchAuthorService.findAuthorsByNames(names);
+    public ResponseEntity<Set<View.Author>> getAuthorsByName(@RequestParam Set<String> names) {
+        Set<View.Author> authors = searchAuthorService.findAuthorsByNames(names);
+        return ResponseEntity.ok(authors);
+    }
+
+    @Operation (summary = "Запрос автора (-ов) по названию книг (-и)")
+    @GetMapping(value = "authors/books")
+    public ResponseEntity<Set<View.Author>> getAuthorsByBooksTitles(@RequestParam Set<String> titles) {
+        Set<View.Author> authors = searchAuthorService.findAuthorsByBookTitles(titles);
         return ResponseEntity.ok(authors);
     }
 }
