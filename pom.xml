@@ -34,7 +34,7 @@
         <module>ui</module>
         <module>api</module>
         <module>storage</module>
-        <module>logic</module>
+        <module>core</module>
         <module>transfer</module>
     </modules>
 
