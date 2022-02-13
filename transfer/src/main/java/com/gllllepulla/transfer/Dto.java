@@ -8,10 +8,15 @@ public final class Dto {
 
     private Dto() {}
 
+    public record Author(
+            int id,
+            String name
+    ) { }
+
     public record Book(
             int id,
             String title,
-            String author,
+            String authorName,
             int yearPublication,
             String genreName,
             String publisherName

@@ -1,7 +1,7 @@
 package com.gllllepulla.transfer;
 
-public final class Info {
-    private Info (){}
+public final class View {
+    private View (){}
 
     public record Book(
             int id,

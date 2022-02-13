@@ -8,7 +8,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.gllllepulla.transfer.Info;
+import com.gllllepulla.transfer.View;
 
 import java.util.List;
 import java.util.Set;
@@ -24,25 +24,25 @@ public class SearchBookController {
             @ApiResponse(responseCode = "404", description = "Not Found", content = @Content (schema = @Schema (hidden = true)))
     })
     @GetMapping("/books")
-    public ResponseEntity<List<Info.Book>> getAllBooks() {
+    public ResponseEntity<List<View.Book>> getAllBooks() {
         return ResponseEntity.ok().build();// FIXME: stub
     }
 
     @Operation (summary = "Запрос книги по id")
     @GetMapping("books/{id}")
-    public ResponseEntity<Info.Book> getBookById(@PathVariable Long id) {
+    public ResponseEntity<View.Book> getBookById(@PathVariable Long id) {
         return ResponseEntity.ok().build();// FIXME: stub
     }
 
     @Operation (summary = "Запрос книг (-и) по наименованию (-ям)")
     @GetMapping(value = "books/title")
-    public ResponseEntity<List<Info.Book>> getBooksByTitle(@RequestParam Set<String> titles) {
+    public ResponseEntity<List<View.Book>> getBooksByTitle(@RequestParam Set<String> titles) {
         return ResponseEntity.ok().build();// FIXME: stub
     }
 
     @Operation (summary = "Запрос книг (-и) по имени автора (-ов)")
     @GetMapping(value = "books/author")
-    public ResponseEntity<List<Info.Book>> getBooksByAuthorName(@RequestParam Set<String> names) {
+    public ResponseEntity<List<View.Book>> getBooksByAuthorName(@RequestParam Set<String> names) {
         return ResponseEntity.ok().build();// FIXME: stub
     }
 
