@@ -1,5 +1,7 @@
 package com.gllllepulla.transfer;
 
+import java.time.Instant;
+
 /**
  * DTO record classes for entities transfer
  *
@@ -10,7 +12,8 @@ public final class Dto {
 
     public record Author(
             int id,
-            String name
+            String name,
+            Instant born
     ) { }
 
     public record Book(

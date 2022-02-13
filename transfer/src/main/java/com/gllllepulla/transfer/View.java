@@ -1,5 +1,7 @@
 package com.gllllepulla.transfer;
 
+import java.time.Instant;
+
 public final class View {
     private View (){}
 
@@ -9,11 +11,14 @@ public final class View {
             int yearPublication,
             String genreName,
             String publisherName,
-            String authorName) { }
+            String authorName
+    ) { }
 
     public record Author(
             int id,
-            String name) { }
+            String name,
+            Instant born
+    ) { }
 
     public record Genre(
             int id,

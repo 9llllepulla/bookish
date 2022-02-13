@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.Instant;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -16,12 +17,17 @@ public class Author {
 
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
+    @Basic
     @Column (name = "author_id", nullable = false)
     private Integer id;
 
     @Basic
     @Column(name = "author_name", length = 200)
     private String authorName;
+
+    @Basic
+    @Column(name = "author_born", length = 8)
+    private Instant born;
 
     @Getter(AccessLevel.NONE)
     @Setter (AccessLevel.NONE)
