@@ -19,11 +19,11 @@ import java.io.Serializable;
 public class BookAuthorPK implements Serializable {
 
     @JoinColumn (name = "book_id", nullable = false)
-    private int bookId;
+    private Long bookId;
     @JoinColumn(name = "author_id", nullable = false)
-    private int authorId;
+    private Long authorId;
 
-    protected BookAuthorPK(int bookId, int authorId) {
+    protected BookAuthorPK(long bookId, long authorId) {
         this.bookId = bookId;
         this.authorId = authorId;
     }

@@ -6,7 +6,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -17,10 +16,10 @@ public class Book {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     @Column (name = "book_id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Basic
-    @Column(name = "book_title", length = 200)
+    @Column(name = "book_title", length = 200, nullable = false)
     private String title;
 
     @Basic
@@ -56,14 +55,13 @@ public class Book {
 
         Book book = (Book) o;
 
-        if (!Objects.equals(id, book.id)) return false;
-        if (!title.equals(book.title)) return false;
-        return Objects.equals(yearPublication, book.yearPublication);
+        if (!id.equals(book.id)) return false;
+        return title.equals(book.title);
     }
 
     @Override
     public int hashCode () {
-        int result = id;
+        int result = id.hashCode();
         result = 31 * result + title.hashCode();
         return result;
     }

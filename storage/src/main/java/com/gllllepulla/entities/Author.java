@@ -7,7 +7,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.Instant;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -19,10 +18,10 @@ public class Author {
     @GeneratedValue (strategy = GenerationType.AUTO)
     @Basic
     @Column (name = "author_id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Basic
-    @Column(name = "author_name", length = 200)
+    @Column(name = "author_name", length = 200, nullable = false)
     private String authorName;
 
     @Basic
@@ -46,13 +45,13 @@ public class Author {
 
         Author author = (Author) o;
 
-        if (!Objects.equals(id, author.id)) return false;
+        if (!id.equals(author.id)) return false;
         return authorName.equals(author.authorName);
     }
 
     @Override
     public int hashCode () {
-        int result = id;
+        int result = id.hashCode();
         result = 31 * result + authorName.hashCode();
         return result;
     }

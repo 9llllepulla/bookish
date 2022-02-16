@@ -1,5 +1,6 @@
 package com.gllllepulla.entities;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.ToString;
 import org.hibernate.Hibernate;
@@ -13,6 +14,7 @@ import java.util.Objects;
 @Table (name = "book_author")
 public class BookAuthor {
 
+    @Getter(AccessLevel.NONE)
     @ToString.Include
     @EmbeddedId
     private BookAuthorPK primaryKey;

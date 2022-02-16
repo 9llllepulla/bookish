@@ -32,9 +32,9 @@ public class EditorController {
     }
 
     @DeleteMapping("/authors")
-    public ResponseEntity<Set<View.Author>> deleteAuthorsByIds(@RequestParam Set<Long> ids) {
-        Set<View.Author> authors = editorService.deleteAuthorsByIds(ids);
-        return ResponseEntity.ok().body(authors);
+    public ResponseEntity<Void> deleteAuthorsByIds(@RequestParam Set<Long> ids) {
+        editorService.deleteAuthorsByIds(ids);
+        return ResponseEntity.ok().build();
     }
 
     @PutMapping(value = "books")
@@ -51,9 +51,9 @@ public class EditorController {
     }
 
     @DeleteMapping("/books")
-    public ResponseEntity<Set<View.Book>> deleteBooksByIds(@RequestParam Set<Long> ids) {
-        Set<View.Book> books = editorService.deleteBooksByIds(ids);
-        return ResponseEntity.ok().body(books);
+    public ResponseEntity<Void> deleteBooksByIds(@RequestParam Set<Long> ids) {
+        editorService.deleteBooksByIds(ids);
+        return ResponseEntity.ok().build();
     }
 
 }

@@ -15,8 +15,8 @@ public interface EditorService {
 
     View.Book createBook(View.Book book);
 
-    Set<View.Author> deleteAuthorsByIds(Set<Long> ids);
+    void deleteAuthorsByIds(Set<Long> ids);
 
-    Set<View.Book> deleteBooksByIds(Set<Long> ids);
+    void deleteBooksByIds(Set<Long> ids);
 
 }
