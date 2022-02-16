@@ -14,7 +14,7 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <postgres.version>42.3.1</postgres.version>
+        <postgres.version>42.3.2</postgres.version>
         <lombok.version>1.18.22</lombok.version>
     </properties>
 
