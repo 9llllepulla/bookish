@@ -11,13 +11,13 @@ public final class Dto {
     private Dto() {}
 
     public record Author(
-            int id,
+            long id,
             String name,
             Instant born
     ) { }
 
     public record Book(
-            int id,
+            long id,
             String title,
             String authorName,
             int yearPublication,
@@ -26,12 +26,12 @@ public final class Dto {
     ) { }
 
     public record Genre(
-            int id,
+            long id,
             String name
     ) { }
 
     public record Publisher(
-            int id,
+            long id,
             String name
     ) { }
 

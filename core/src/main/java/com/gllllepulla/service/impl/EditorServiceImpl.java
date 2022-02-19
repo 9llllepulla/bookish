@@ -1,17 +1,14 @@
 package com.gllllepulla.service.impl;
 
-import com.gllllepulla.entities.Author;
-import com.gllllepulla.entities.Book;
 import com.gllllepulla.mapper.AuthorMapper;
 import com.gllllepulla.mapper.BookMapper;
-import com.gllllepulla.repository.AuthorRepository;
-import com.gllllepulla.repository.BookRepository;
 import com.gllllepulla.service.EditorService;
+import com.gllllepulla.service.TransferService;
+import com.gllllepulla.transfer.Dto;
 import com.gllllepulla.transfer.Info;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -19,8 +16,7 @@ import java.util.Set;
 @Service
 class EditorServiceImpl implements EditorService {
 
-    private final AuthorRepository authorRepository;
-    private final BookRepository bookRepository;
+    private final TransferService transferService;
     private final AuthorMapper authorMapper;
     private final BookMapper bookMapper;
 
@@ -30,10 +26,9 @@ class EditorServiceImpl implements EditorService {
     }
 
     @Override
-    public Info.Author createAuthor(Info.Author authorView) {
-        Author author = authorMapper.toAuthor(authorView);
-        Author repositoryAuthor = authorRepository.saveAndFlush(author);
-        return authorMapper.toAuthorView(repositoryAuthor);
+    public Info.Author createAuthor(Info.Author authorInfo) {
+        Dto.Author authorDto = transferService.createAuthor(authorInfo);
+        return authorMapper.toAuthorView(authorDto);
     }
 
     @Override
@@ -42,20 +37,18 @@ class EditorServiceImpl implements EditorService {
     }
 
     @Override
-    public Info.Book createBook(Info.Book bookView) {
-        Book book = bookMapper.toBook(bookView);
-        Book repositoryBook = bookRepository.saveAndFlush(book);
-        return bookMapper.toBookView(repositoryBook);
+    public Info.Book createBook(Info.Book bookInfo) {
+        Dto.Book bookDto = transferService.createBook(bookInfo);
+        return bookMapper.toBookInfo(bookDto);
     }
 
     @Override
     public void deleteAuthorsByIds(Set<Long> ids) {
-        List<Author> authors = authorRepository.findAllById(ids);
-        authorRepository.deleteInBatch(authors);
+        transferService.deleteAuthorsById(ids);
     }
 
     @Override
-    public void deleteBooksByIds (Set<Long> ids) {
-
+    public void deleteBooksByIds(Set<Long> ids) {
+        transferService.deleteBooksById(ids);
     }
 }

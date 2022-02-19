@@ -10,5 +10,5 @@ import java.util.Set;
 @Repository
 public interface AuthorRepository extends JpaRepository<Author, Long> {
 
-    List<Author> findAllByNames (Set<String> names);
+    List<Author> findAllByNames(Set<String> names);
 }

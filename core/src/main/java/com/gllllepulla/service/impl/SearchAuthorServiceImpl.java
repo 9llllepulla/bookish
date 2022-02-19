@@ -1,11 +1,9 @@
 package com.gllllepulla.service.impl;
 
-import com.gllllepulla.entities.Book;
 import com.gllllepulla.mapper.AuthorMapper;
-import com.gllllepulla.repository.AuthorRepository;
-import com.gllllepulla.repository.BookAuthorRepository;
-import com.gllllepulla.repository.BookRepository;
+import com.gllllepulla.service.TransferService;
 import com.gllllepulla.service.SearchAuthorService;
+import com.gllllepulla.transfer.Dto;
 import com.gllllepulla.transfer.Info;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,36 +17,34 @@ import static java.util.stream.Collectors.toSet;
 @Service
 class SearchAuthorServiceImpl implements SearchAuthorService {
 
-    private final AuthorRepository authorRepository;
-    private final BookRepository bookRepository;
-    private final BookAuthorRepository bookAuthorRepository;
     private final AuthorMapper authorMapper;
+    private final TransferService transferService;
 
     @Override
     public Set<Info.Author> getAllAuthors() {
-        return authorRepository.findAll().stream()
+        return transferService.findAllAuthors().stream()
                 .map(authorMapper::toAuthorView)
                 .collect(toSet());
     }
 
     @Override
     public Optional<Info.Author> findAuthorById(Long id) {
-        return authorRepository.findById(id)
+        return transferService.findAuthorById(id)
                 .map(authorMapper::toAuthorView);
     }
 
     @Override
     public Set<Info.Author> findAuthorsByNames(Set<String> names) {
-        return authorRepository.findAllByNames(names).stream()
+        return transferService.findAllAuthorsByNames(names).stream()
                 .map(authorMapper::toAuthorView)
                 .collect(toSet());
     }
 
     @Override
     public Set<Info.Author> findAuthorsByBookTitles(Set<String> titles) {
-        return bookRepository.findAllByTitles(titles).stream()
-                .map(Book::getId)
-                .map(bookAuthorRepository::findAuthorsByBookId)
+        return transferService.findAllBooksByTitles(titles).stream()
+                .map(Dto.Book::id)
+                .map(transferService::findAuthorsByBookId)
                 .flatMap(authors -> authors.stream()
                         .map(authorMapper::toAuthorView))
                 .collect(toSet());
