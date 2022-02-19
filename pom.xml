@@ -95,13 +95,6 @@
                 <artifactId>junit-vintage-engine</artifactId>
                 <scope>test</scope>
             </dependency>
-            <!---->
-            <!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct-processor -->
-            <dependency>
-                <groupId>org.mapstruct</groupId>
-                <artifactId>mapstruct</artifactId>
-                <version>${org.mapstruct.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
