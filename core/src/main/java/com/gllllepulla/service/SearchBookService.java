@@ -1,17 +1,17 @@
 package com.gllllepulla.service;
 
-import com.gllllepulla.transfer.View;
+import com.gllllepulla.transfer.Info;
 
 import java.util.Optional;
 import java.util.Set;
 
 public interface SearchBookService {
 
-    Set<View.Book> getAllBooks();
+    Set<Info.Book> getAllBooks();
 
-    Optional<View.Book> findBookById(Long id);
+    Optional<Info.Book> findBookById(Long id);
 
-    Set<View.Book> findBooksByTitles(Set<String> titles);
+    Set<Info.Book> findBooksByTitles(Set<String> titles);
 
-    Set<View.Book> findBooksByAuthorsNames(Set<String> names);
+    Set<Info.Book> findBooksByAuthorsNames(Set<String> names);
 }

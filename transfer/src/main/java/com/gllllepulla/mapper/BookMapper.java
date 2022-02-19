@@ -1,13 +1,13 @@
 package com.gllllepulla.mapper;
 
 import com.gllllepulla.entities.Book;
-import com.gllllepulla.transfer.View;
+import com.gllllepulla.transfer.Info;
 
 public interface BookMapper {
 
 
-    View.Book toBookView(Book book);
+    Info.Book toBookView(Book book);
 
-    Book toBook (View.Book bookView);
+    Book toBook (Info.Book bookView);
 
 }

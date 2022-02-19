@@ -1,18 +1,18 @@
 package com.gllllepulla.service;
 
-import com.gllllepulla.transfer.View;
+import com.gllllepulla.transfer.Info;
 
 import java.util.Optional;
 import java.util.Set;
 
 public interface SearchAuthorService {
 
-    Set<View.Author> getAllAuthors();
+    Set<Info.Author> getAllAuthors();
 
-    Optional<View.Author> findAuthorById(Long id);
+    Optional<Info.Author> findAuthorById(Long id);
 
-    Set<View.Author> findAuthorsByNames(Set<String> names);
+    Set<Info.Author> findAuthorsByNames(Set<String> names);
 
-    Set<View.Author> findAuthorsByBookTitles (Set<String> titles);
+    Set<Info.Author> findAuthorsByBookTitles (Set<String> titles);
 
 }

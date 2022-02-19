@@ -7,7 +7,7 @@ import com.gllllepulla.mapper.BookMapper;
 import com.gllllepulla.repository.AuthorRepository;
 import com.gllllepulla.repository.BookRepository;
 import com.gllllepulla.service.EditorService;
-import com.gllllepulla.transfer.View;
+import com.gllllepulla.transfer.Info;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -25,24 +25,24 @@ class EditorServiceImpl implements EditorService {
     private final BookMapper bookMapper;
 
     @Override
-    public Optional<View.Author> editAuthor(View.Author author) {
+    public Optional<Info.Author> editAuthor(Info.Author author) {
         return Optional.empty();
     }
 
     @Override
-    public View.Author createAuthor(View.Author authorView) {
+    public Info.Author createAuthor(Info.Author authorView) {
         Author author = authorMapper.toAuthor(authorView);
         Author repositoryAuthor = authorRepository.saveAndFlush(author);
         return authorMapper.toAuthorView(repositoryAuthor);
     }
 
     @Override
-    public Optional<View.Book> editBook(View.Book book) {
+    public Optional<Info.Book> editBook(Info.Book book) {
         return Optional.empty();
     }
 
     @Override
-    public View.Book createBook(View.Book bookView) {
+    public Info.Book createBook(Info.Book bookView) {
         Book book = bookMapper.toBook(bookView);
         Book repositoryBook = bookRepository.saveAndFlush(book);
         return bookMapper.toBookView(repositoryBook);

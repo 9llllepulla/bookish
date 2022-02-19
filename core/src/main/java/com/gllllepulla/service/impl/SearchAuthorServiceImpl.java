@@ -6,7 +6,7 @@ import com.gllllepulla.repository.AuthorRepository;
 import com.gllllepulla.repository.BookAuthorRepository;
 import com.gllllepulla.repository.BookRepository;
 import com.gllllepulla.service.SearchAuthorService;
-import com.gllllepulla.transfer.View;
+import com.gllllepulla.transfer.Info;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -25,27 +25,27 @@ class SearchAuthorServiceImpl implements SearchAuthorService {
     private final AuthorMapper authorMapper;
 
     @Override
-    public Set<View.Author> getAllAuthors() {
+    public Set<Info.Author> getAllAuthors() {
         return authorRepository.findAll().stream()
                 .map(authorMapper::toAuthorView)
                 .collect(toSet());
     }
 
     @Override
-    public Optional<View.Author> findAuthorById(Long id) {
+    public Optional<Info.Author> findAuthorById(Long id) {
         return authorRepository.findById(id)
                 .map(authorMapper::toAuthorView);
     }
 
     @Override
-    public Set<View.Author> findAuthorsByNames(Set<String> names) {
+    public Set<Info.Author> findAuthorsByNames(Set<String> names) {
         return authorRepository.findAllByNames(names).stream()
                 .map(authorMapper::toAuthorView)
                 .collect(toSet());
     }
 
     @Override
-    public Set<View.Author> findAuthorsByBookTitles(Set<String> titles) {
+    public Set<Info.Author> findAuthorsByBookTitles(Set<String> titles) {
         return bookRepository.findAllByTitles(titles).stream()
                 .map(Book::getId)
                 .map(bookAuthorRepository::findAuthorsByBookId)

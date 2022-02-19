@@ -2,8 +2,8 @@ package com.gllllepulla.transfer;
 
 import java.time.Instant;
 
-public final class View {
-    private View (){}
+public final class Info {
+    private Info (){}
 
     public record Book(
             int id,

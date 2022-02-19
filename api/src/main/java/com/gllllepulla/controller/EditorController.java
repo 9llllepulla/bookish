@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.gllllepulla.transfer.View;
+import com.gllllepulla.transfer.Info;
 
 import java.util.Set;
 
@@ -19,14 +19,14 @@ public class EditorController {
     private final EditorService editorService;
 
     @PutMapping(value = "/authors")
-    public ResponseEntity<View.Author> editAuthor(@RequestParam View.Author author) {
+    public ResponseEntity<Info.Author> editAuthor(@RequestParam Info.Author author) {
         return editorService.editAuthor(author)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping("/authors")
-    public ResponseEntity<View.Author> createAuthor(@RequestBody View.Author author) {
+    public ResponseEntity<Info.Author> createAuthor(@RequestBody Info.Author author) {
         return ResponseEntity.ok()
                 .body(editorService.createAuthor(author));
     }
@@ -38,14 +38,14 @@ public class EditorController {
     }
 
     @PutMapping(value = "books")
-    public ResponseEntity<View.Book> editBook(@RequestParam View.Book book) {
+    public ResponseEntity<Info.Book> editBook(@RequestParam Info.Book book) {
         return editorService.editBook(book)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping("books")
-    public ResponseEntity<View.Book> createBook(@RequestBody View.Book book) {
+    public ResponseEntity<Info.Book> createBook(@RequestBody Info.Book book) {
         return ResponseEntity.ok()
                 .body(editorService.createBook(book));
     }

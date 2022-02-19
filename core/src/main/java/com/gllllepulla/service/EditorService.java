@@ -1,19 +1,19 @@
 package com.gllllepulla.service;
 
-import com.gllllepulla.transfer.View;
+import com.gllllepulla.transfer.Info;
 
 import java.util.Optional;
 import java.util.Set;
 
 public interface EditorService {
 
-    Optional<View.Author> editAuthor(View.Author author);
+    Optional<Info.Author> editAuthor(Info.Author author);
 
-    View.Author createAuthor(View.Author author);
+    Info.Author createAuthor(Info.Author author);
 
-    Optional<View.Book> editBook(View.Book book);
+    Optional<Info.Book> editBook(Info.Book book);
 
-    View.Book createBook(View.Book book);
+    Info.Book createBook(Info.Book book);
 
     void deleteAuthorsByIds(Set<Long> ids);
 
