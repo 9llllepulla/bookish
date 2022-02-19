@@ -23,20 +23,20 @@ class SearchAuthorServiceImpl implements SearchAuthorService {
     @Override
     public Set<Info.Author> getAllAuthors() {
         return transferService.findAllAuthors().stream()
-                .map(authorMapper::toAuthorView)
+                .map(authorMapper::toAuthorInfo)
                 .collect(toSet());
     }
 
     @Override
     public Optional<Info.Author> findAuthorById(Long id) {
         return transferService.findAuthorById(id)
-                .map(authorMapper::toAuthorView);
+                .map(authorMapper::toAuthorInfo);
     }
 
     @Override
     public Set<Info.Author> findAuthorsByNames(Set<String> names) {
         return transferService.findAllAuthorsByNames(names).stream()
-                .map(authorMapper::toAuthorView)
+                .map(authorMapper::toAuthorInfo)
                 .collect(toSet());
     }
 
@@ -46,7 +46,7 @@ class SearchAuthorServiceImpl implements SearchAuthorService {
                 .map(Dto.Book::id)
                 .map(transferService::findAuthorsByBookId)
                 .flatMap(authors -> authors.stream()
-                        .map(authorMapper::toAuthorView))
+                        .map(authorMapper::toAuthorInfo))
                 .collect(toSet());
     }
 }

@@ -28,7 +28,7 @@ class EditorServiceImpl implements EditorService {
     @Override
     public Info.Author createAuthor(Info.Author authorInfo) {
         Dto.Author authorDto = transferService.createAuthor(authorInfo);
-        return authorMapper.toAuthorView(authorDto);
+        return authorMapper.toAuthorInfo(authorDto);
     }
 
     @Override
