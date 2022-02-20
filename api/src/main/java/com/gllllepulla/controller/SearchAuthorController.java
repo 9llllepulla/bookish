@@ -1,7 +1,7 @@
 package com.gllllepulla.controller;
 
 import com.gllllepulla.service.SearchAuthorService;
-import com.gllllepulla.transfer.Info;
+import com.gllllepulla.model.Info;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

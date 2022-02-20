@@ -3,8 +3,7 @@ package com.gllllepulla.configuration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-@ComponentScan(basePackages = {"com.gllllepulla.service", "com.gllllepulla.service.impl"})
+@ComponentScan(basePackages = {"com.gllllepulla.transfer", "com.gllllepulla.mapper"})
 @Configuration
-public class CoreConfiguration {
-
+public class TransferConfiguration {
 }

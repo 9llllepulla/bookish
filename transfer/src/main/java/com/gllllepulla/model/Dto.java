@@ -1,4 +1,4 @@
-package com.gllllepulla.transfer;
+package com.gllllepulla.model;
 
 import java.time.Instant;
 

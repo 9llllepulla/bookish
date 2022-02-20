@@ -1,4 +1,4 @@
-package com.gllllepulla.service;
+package com.gllllepulla.transfer;
 
 import com.gllllepulla.entities.Author;
 import com.gllllepulla.entities.Book;
@@ -7,8 +7,8 @@ import com.gllllepulla.mapper.BookMapper;
 import com.gllllepulla.repository.AuthorRepository;
 import com.gllllepulla.repository.BookAuthorRepository;
 import com.gllllepulla.repository.BookRepository;
-import com.gllllepulla.transfer.Dto;
-import com.gllllepulla.transfer.Info;
+import com.gllllepulla.model.Dto;
+import com.gllllepulla.model.Info;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

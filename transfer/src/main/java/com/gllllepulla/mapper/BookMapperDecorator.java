@@ -5,7 +5,7 @@ import com.gllllepulla.entities.Book;
 import com.gllllepulla.repository.AuthorRepository;
 import com.gllllepulla.repository.GenreRepository;
 import com.gllllepulla.repository.PublisherRepository;
-import com.gllllepulla.transfer.Info;
+import com.gllllepulla.model.Info;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 

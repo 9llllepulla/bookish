@@ -1,6 +1,6 @@
 package com.gllllepulla.service;
 
-import com.gllllepulla.transfer.Info;
+import com.gllllepulla.model.Info;
 
 import java.util.Optional;
 import java.util.Set;

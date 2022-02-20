@@ -1,7 +1,7 @@
-package com.gllllepulla.service;
+package com.gllllepulla.transfer;
 
-import com.gllllepulla.transfer.Dto;
-import com.gllllepulla.transfer.Info;
+import com.gllllepulla.model.Dto;
+import com.gllllepulla.model.Info;
 
 import java.util.List;
 import java.util.Optional;

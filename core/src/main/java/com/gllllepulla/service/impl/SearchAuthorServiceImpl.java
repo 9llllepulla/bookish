@@ -1,10 +1,10 @@
 package com.gllllepulla.service.impl;
 
 import com.gllllepulla.mapper.AuthorMapper;
-import com.gllllepulla.service.TransferService;
+import com.gllllepulla.transfer.TransferService;
 import com.gllllepulla.service.SearchAuthorService;
-import com.gllllepulla.transfer.Dto;
-import com.gllllepulla.transfer.Info;
+import com.gllllepulla.model.Dto;
+import com.gllllepulla.model.Info;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

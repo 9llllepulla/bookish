@@ -1,8 +1,8 @@
 package com.gllllepulla.mapper;
 
 import com.gllllepulla.entities.Book;
-import com.gllllepulla.transfer.Dto;
-import com.gllllepulla.transfer.Info;
+import com.gllllepulla.model.Dto;
+import com.gllllepulla.model.Info;
 import org.mapstruct.DecoratedWith;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
