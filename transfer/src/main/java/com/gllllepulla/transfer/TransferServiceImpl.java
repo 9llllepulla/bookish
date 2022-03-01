@@ -23,7 +23,7 @@ import static java.util.stream.Collectors.toSet;
 @Transactional
 @Service
 @AllArgsConstructor
-public class TransferServiceImpl implements TransferService {
+class TransferServiceImpl implements TransferService {
 
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
