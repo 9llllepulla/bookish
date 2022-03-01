@@ -6,3 +6,4 @@
 .gitignore
 *_bd
 /logs
+**/server.properties
