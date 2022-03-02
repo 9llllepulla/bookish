@@ -34,7 +34,7 @@ public class SearchBookController {
     }
 
     @Operation (summary = "Запрос книги по id")
-    @GetMapping("books/{id}")
+    @GetMapping("/books/{id}")
     public ResponseEntity<Info.Book> getBookById(@PathVariable Long id) {
         return searchBookService.findBookById(id)
                 .map(ResponseEntity::ok)
@@ -42,14 +42,14 @@ public class SearchBookController {
     }
 
     @Operation (summary = "Запрос книг (-и) по наименованию (-ям)")
-    @GetMapping(value = "books/title")
+    @GetMapping(value = "/books/title")
     public ResponseEntity<Set<Info.Book>> getBooksByTitle(@RequestParam Set<String> titles) {
         Set<Info.Book> books = searchBookService.findBooksByTitles(titles);
         return ResponseEntity.ok(books);
     }
 
     @Operation (summary = "Запрос книг (-и) по имени автора (-ов)")
-    @GetMapping(value = "books/author")
+    @GetMapping(value = "/books/author")
     public ResponseEntity<Set<Info.Book>> getBooksByAuthorsNames(@RequestParam Set<String> names) {
         Set<Info.Book> books = searchBookService.findBooksByAuthorsNames(names);
         return ResponseEntity.ok(books);

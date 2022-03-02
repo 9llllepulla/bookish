@@ -37,14 +37,14 @@ public class EditorController {
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping(value = "books")
+    @PutMapping(value = "/books")
     public ResponseEntity<Info.Book> editBook(@RequestParam Info.Book book) {
         return editorService.editBook(book)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping("books")
+    @PostMapping("/books")
     public ResponseEntity<Info.Book> createBook(@RequestBody Info.Book book) {
         return ResponseEntity.ok()
                 .body(editorService.createBook(book));

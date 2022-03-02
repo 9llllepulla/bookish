@@ -27,14 +27,14 @@ public class SearchAuthorController {
             @ApiResponse (responseCode = "200", description = "Ok"),
             @ApiResponse(responseCode = "404", description = "Not Found", content = @Content (schema = @Schema (hidden = true)))
     })
-    @GetMapping ("authors")
+    @GetMapping ("/authors")
     public ResponseEntity<Set<Info.Author>> getAllAuthors() {
         Set<Info.Author> allAuthors = searchAuthorService.getAllAuthors();
         return ResponseEntity.ok(allAuthors);
     }
 
     @Operation (summary = "Запрос автора по id")
-    @GetMapping("authors/{id}")
+    @GetMapping("/authors/{id}")
     public ResponseEntity<Info.Author> getAuthorById(@PathVariable Long id) {
         return searchAuthorService.findAuthorById(id)
                 .map(ResponseEntity::ok)
@@ -42,14 +42,14 @@ public class SearchAuthorController {
     }
 
     @Operation (summary = "Запрос автора (-ов) по имени (-ам)")
-    @GetMapping(value = "authors/name")
+    @GetMapping(value = "/authors/name")
     public ResponseEntity<Set<Info.Author>> getAuthorsByName(@RequestParam Set<String> names) {
         Set<Info.Author> authors = searchAuthorService.findAuthorsByNames(names);
         return ResponseEntity.ok(authors);
     }
 
     @Operation (summary = "Запрос автора (-ов) по названию книг (-и)")
-    @GetMapping(value = "authors/books")
+    @GetMapping(value = "/authors/books")
     public ResponseEntity<Set<Info.Author>> getAuthorsByBooksTitles(@RequestParam Set<String> titles) {
         Set<Info.Author> authors = searchAuthorService.findAuthorsByBookTitles(titles);
         return ResponseEntity.ok(authors);
