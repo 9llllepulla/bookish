@@ -5,6 +5,8 @@ import com.gllllepulla.entities.Book;
 import com.gllllepulla.entities.BookAuthor;
 import com.gllllepulla.entities.BookAuthorPK;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,9 +14,9 @@ import java.util.List;
 @Repository
 public interface BookAuthorRepository extends JpaRepository<BookAuthor, BookAuthorPK> {
 
-    // TODO написать запрос поиска авторов объединяя таблицы book_authors & authors
-    List<Author> findAuthorsByBookId(Long bookId);
+    @Query("select b.author from BookAuthor b where b.primaryKey.bookId = :bookId")
+    List<Author> findAuthorsByBookId(@Param("bookId") Long bookId);
 
-    // TODO написать запрос поиска книг объединяя таблицы book_authors & books
-    List<Book> findBooksByAuthorId(Long authorId);
+    @Query("select b.book from BookAuthor b where b.primaryKey.authorId = :authorId")
+    List<Book> findBooksByAuthorId(@Param("authorId") Long authorId);
 }
