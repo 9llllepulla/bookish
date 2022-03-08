@@ -17,11 +17,11 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <!--<module>ui</module>-->
-        <module>transfer</module>
         <module>storage</module>
+        <module>transfer</module>
         <module>core</module>
         <module>api</module>
+        <!--<module>ui</module>-->
     </modules>
 
     <properties>
@@ -42,21 +42,17 @@
     </distributionManagement>
 
     <dependencies>
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -92,11 +88,11 @@
             <artifactId>mockito-all</artifactId>
             <version>${mockito-all.version}</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-launcher</artifactId>
