@@ -8,14 +8,12 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
-import java.util.Properties;
-
 @Setter
 @Getter
 @Validated
 @Component
 @ConfigurationProperties(prefix = StorageConfigProperties.PREFIX)
-public class StorageConfigProperties extends Properties {
+public class StorageConfigProperties {
 
     static final String PREFIX = "bookish.datasource";
 
