@@ -1,4 +1,4 @@
-package com.gllllepulla.transfer;
+package com.gllllepulla.transfer.impl;
 
 import com.gllllepulla.entities.Author;
 import com.gllllepulla.entities.Book;
@@ -9,7 +9,10 @@ import com.gllllepulla.repository.BookAuthorRepository;
 import com.gllllepulla.repository.BookRepository;
 import com.gllllepulla.model.Dto;
 import com.gllllepulla.model.Info;
-import lombok.AllArgsConstructor;
+import com.gllllepulla.transfer.TransferService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,9 +23,10 @@ import java.util.Set;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 
+@Slf4j
 @Transactional
+@RequiredArgsConstructor
 @Service
-@AllArgsConstructor
 class TransferServiceImpl implements TransferService {
 
     private final AuthorRepository authorRepository;
@@ -82,13 +86,13 @@ class TransferServiceImpl implements TransferService {
     @Override
     public void deleteAuthorsById(Set<Long> ids) {
         List<Author> authors = authorRepository.findAllById(ids);
-        authorRepository.deleteInBatch(authors);
+        authorRepository.deleteAllInBatch(authors);
     }
 
     @Override
     public void deleteBooksById(Set<Long> ids) {
         List<Book> books = bookRepository.findAllById(ids);
-        bookRepository.deleteInBatch(books);
+        bookRepository.deleteAllInBatch(books);
     }
 
     @Override

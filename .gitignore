@@ -7,3 +7,4 @@
 *_bd
 /logs
 **/server.properties
+**/storage.properties

@@ -1,13 +1,12 @@
 package com.gllllepulla.configuration;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@EntityScan(basePackages = {"com.gllllepulla.entities"})
-@EnableJpaRepositories(basePackages = {"com.gllllepulla.repository"})
-@EnableTransactionManagement
+@Slf4j
+@EntityScan(basePackages = "com.gllllepulla")
 public class StorageConfiguration {
+
 }
