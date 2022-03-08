@@ -12,8 +12,8 @@ import org.springframework.validation.annotation.Validated;
 @Getter
 @Validated
 @Component
-@ConfigurationProperties(prefix = StorageConfigProperties.PREFIX)
-public class StorageConfigProperties {
+@ConfigurationProperties(prefix = StorageProperties.PREFIX)
+public class StorageProperties {
 
     static final String PREFIX = "bookish.datasource";
 
