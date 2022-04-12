@@ -1,6 +1,7 @@
 package com.gllllepulla.service.impl;
 
 import com.gllllepulla.mapper.BookMapper;
+import com.gllllepulla.service.EditorService;
 import com.gllllepulla.service.SearchBookService;
 import com.gllllepulla.transfer.TransferService;
 import com.gllllepulla.model.Dto;
@@ -14,8 +15,8 @@ import java.util.Set;
 import static java.util.stream.Collectors.toSet;
 
 @RequiredArgsConstructor
-@Service
-class SearchBookServiceImpl implements SearchBookService {
+@Service("books")
+class BookService implements SearchBookService, EditorService<Info.Book> {
 
     private final TransferService transferService;
     private final BookMapper bookMapper;
@@ -48,5 +49,21 @@ class SearchBookServiceImpl implements SearchBookService {
                 .flatMap(books -> books.stream()
                         .map(bookMapper::toBookInfo))
                 .collect(toSet());
+    }
+
+    @Override
+    public Optional<Info.Book> edit(Info.Book book) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Info.Book create(Info.Book book) {
+        Dto.Book bookDto = transferService.createBook(book);
+        return bookMapper.toBookInfo(bookDto);
+    }
+
+    @Override
+    public void deleteByIds(Set<Long> ids) {
+        transferService.deleteBooksById(ids);
     }
 }

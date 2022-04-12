@@ -1,6 +1,7 @@
 package com.gllllepulla.service.impl;
 
 import com.gllllepulla.mapper.AuthorMapper;
+import com.gllllepulla.service.EditorService;
 import com.gllllepulla.transfer.TransferService;
 import com.gllllepulla.service.SearchAuthorService;
 import com.gllllepulla.model.Dto;
@@ -14,8 +15,8 @@ import java.util.Set;
 import static java.util.stream.Collectors.toSet;
 
 @RequiredArgsConstructor
-@Service
-class SearchAuthorServiceImpl implements SearchAuthorService {
+@Service("authors")
+class AuthorService implements SearchAuthorService, EditorService<Info.Author> {
 
     private final AuthorMapper authorMapper;
     private final TransferService transferService;
@@ -48,5 +49,21 @@ class SearchAuthorServiceImpl implements SearchAuthorService {
                 .flatMap(authors -> authors.stream()
                         .map(authorMapper::toAuthorInfo))
                 .collect(toSet());
+    }
+
+    @Override
+    public Optional<Info.Author> edit(Info.Author author) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Info.Author create(Info.Author author) {
+        Dto.Author authorDto = transferService.createAuthor(author);
+        return authorMapper.toAuthorInfo(authorDto);
+    }
+
+    @Override
+    public void deleteByIds(Set<Long> ids) {
+        transferService.deleteAuthorsById(ids);
     }
 }

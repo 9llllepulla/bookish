@@ -1,22 +1,14 @@
 package com.gllllepulla.service;
 
-import com.gllllepulla.model.Info;
-
 import java.util.Optional;
 import java.util.Set;
 
-public interface EditorService {
+public interface EditorService<T> {
 
-    Optional<Info.Author> editAuthor(Info.Author author);
+    Optional<T> edit(T t);
 
-    Info.Author createAuthor(Info.Author author);
+    T create(T t);
 
-    Optional<Info.Book> editBook(Info.Book book);
-
-    Info.Book createBook(Info.Book book);
-
-    void deleteAuthorsByIds(Set<Long> ids);
-
-    void deleteBooksByIds(Set<Long> ids);
+    void deleteByIds(Set<Long> ids);
 
 }
