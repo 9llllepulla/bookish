@@ -9,7 +9,7 @@ import java.util.Set;
 
 public interface TransferService {
 
-    Set<Dto.Author> findAllAuthors();
+    List<Dto.Author> findAllAuthors();
 
     Optional<Dto.Author> findAuthorById(Long id);
 

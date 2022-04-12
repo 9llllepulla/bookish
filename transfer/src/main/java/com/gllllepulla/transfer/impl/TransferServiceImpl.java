@@ -12,7 +12,6 @@ import com.gllllepulla.model.Info;
 import com.gllllepulla.transfer.TransferService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,7 +20,6 @@ import java.util.Optional;
 import java.util.Set;
 
 import static java.util.stream.Collectors.toList;
-import static java.util.stream.Collectors.toSet;
 
 @Slf4j
 @Transactional
@@ -36,10 +34,10 @@ class TransferServiceImpl implements TransferService {
     private final BookMapper bookMapper;
 
     @Override
-    public Set<Dto.Author> findAllAuthors() {
+    public List<Dto.Author> findAllAuthors() {
         return authorRepository.findAll().stream()
                 .map(authorMapper::toAuthorDto)
-                .collect(toSet());
+                .collect(toList());
     }
 
     @Override
