@@ -1,27 +1,32 @@
 package com.gllllepulla.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.time.Instant;
 
 public final class Info {
     private Info (){}
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public record Book(
-            int id,
+            Integer id,
             String title,
-            int yearPublication,
+            Integer yearPublication,
             String genreName,
             String publisherName,
             String authorName
     ) { }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public record Author(
-            int id,
+            Integer id,
             String name,
             Instant born
     ) { }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public record Genre(
-            int id,
+            Integer id,
             String genreName
     ) { }
 
