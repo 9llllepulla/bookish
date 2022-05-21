@@ -21,6 +21,9 @@ import java.util.Set;
 
 import static java.util.stream.Collectors.toList;
 
+/**
+ * Service for transfer DTO's between layers
+ */
 @Slf4j
 @Transactional
 @RequiredArgsConstructor

@@ -13,6 +13,6 @@ public interface SearchAuthorService {
 
     Set<Info.Author> findAuthorsByNames(Set<String> names);
 
-    Set<Info.Author> findAuthorsByBookTitles (Set<String> titles);
+    Set<Info.Author> findAuthorsByBookTitles(Set<String> titles);
 
 }
