@@ -21,6 +21,7 @@
         <module>transfer</module>
         <module>core</module>
         <module>api</module>
+        <module>authenticate</module>
         <!--<module>ui</module>-->
     </modules>
 
