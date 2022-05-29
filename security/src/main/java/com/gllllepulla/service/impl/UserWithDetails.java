@@ -9,7 +9,7 @@ import java.util.Collection;
 /**
  * Security provided user
  */
-record UserWithDetails(Dto.User user) implements UserDetails {
+record UserWithDetails(Dto.BookishUser user) implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

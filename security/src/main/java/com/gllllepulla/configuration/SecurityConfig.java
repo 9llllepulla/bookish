@@ -1,6 +1,6 @@
 package com.gllllepulla.configuration;
 
-import com.gllllepulla.service.UserServiceProvider;
+import com.gllllepulla.service.UserDetailsServiceProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -22,7 +22,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final UserServiceProvider userService;
+    private final UserDetailsServiceProvider userService;
 
     @Autowired
     public void configure(AuthenticationManagerBuilder auth) throws Exception {

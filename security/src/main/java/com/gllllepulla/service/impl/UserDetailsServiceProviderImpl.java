@@ -2,7 +2,7 @@ package com.gllllepulla.service.impl;
 
 import com.gllllepulla.model.Dto;
 import com.gllllepulla.service.UserService;
-import com.gllllepulla.service.UserServiceProvider;
+import com.gllllepulla.service.UserDetailsServiceProvider;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,13 +15,13 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Slf4j
 @Service
-class UserServiceProviderImpl implements UserServiceProvider {
+class UserDetailsServiceProviderImpl implements UserDetailsServiceProvider {
 
     private final UserService userService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Dto.User user = userService.findUserByName(username)
+        Dto.BookishUser user = userService.findUserByName(username)
                 .orElseThrow(() -> {
                     log.error("user with name {} not found", username);
                     return new UsernameNotFoundException("user with name "+username+" not found");
