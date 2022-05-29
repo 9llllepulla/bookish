@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>com.9llllepulla</groupId>
-            <artifactId>transfer</artifactId>
+            <artifactId>core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
