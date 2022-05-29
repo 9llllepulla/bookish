@@ -4,17 +4,18 @@ import java.time.Instant;
 
 /**
  * DTO record classes for entities transfer
- *
  */
 public final class Dto {
 
-    private Dto() {}
+    private Dto() {
+    }
 
     public record Author(
             long id,
             String name,
             Instant born
-    ) { }
+    ) {
+    }
 
     public record Book(
             long id,
@@ -23,16 +24,29 @@ public final class Dto {
             int yearPublication,
             String genreName,
             String publisherName
-    ) { }
+    ) {
+    }
 
     public record Genre(
             long id,
             String name
-    ) { }
+    ) {
+    }
 
     public record Publisher(
             long id,
             String name
-    ) { }
+    ) {
+    }
+
+    public record User(
+            String name,
+            String password,
+            boolean isAccountNonExpired,
+            boolean isAccountNonLocked,
+            boolean isCredentialsNonExpired,
+            boolean isEnabled
+    ) {
+    }
 
 }
