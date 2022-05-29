@@ -1,5 +1,8 @@
 package com.gllllepulla.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import javax.validation.constraints.NotBlank;
 import java.time.Instant;
 
 /**
@@ -39,7 +42,8 @@ public final class Dto {
     ) {
     }
 
-    public record User(
+    public record BookishUser(
+            Integer id,
             String name,
             String password,
             boolean isAccountNonExpired,
